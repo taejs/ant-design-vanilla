@@ -1,0 +1,41 @@
+@import '../antd-theme/variables.scss';
+
+.antd-button {
+  position: relative;
+  color: $antd-theme-primary;
+  border: 1px solid $antd-theme-primary;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    .antd-button__wave-shadow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      border-radius: inherit;
+      box-shadow: 0 0 0 0 $antd-theme-primary;
+      animation: fadeEffect 2s ease-out, waveEffect 0.4s ease-out;
+      animation-fill-mode: forwards;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+  }
+  
+  @keyframes waveEffect {
+    100% {
+      box-shadow: 0 0 0 $antd-theme-primary;
+      box-shadow: 0 0 0 $wave-animation-width $antd-theme-primary;
+    }
+  }
+  
+  @keyframes fadeEffect {
+    100% {
+      opacity: 0;
+    }
+  }
+}
