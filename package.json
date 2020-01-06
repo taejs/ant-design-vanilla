@@ -1,0 +1,13 @@
+{
+  "name": "ant-design-vanilla",
+  "version": "0.0.1",
+  "description": "Ant Design Components of vanilla JavaScript",
+  "main": "index.js",
+  "repository": "https://github.com/Ta2Rim/ant-design-vanilla.git",
+  "author": "tae",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
