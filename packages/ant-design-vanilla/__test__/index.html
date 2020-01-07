@@ -4,12 +4,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Button</title>
-  <link rel="stylesheet" href="../dist/bundle.css"/>
+  <link rel="stylesheet" href="../../antd-button/dist/bundle.css"></link>
+  <script src="../dist/bundle.js"></script>
 </head>
 <body>
   <button class="antd-button">
     <span class="antd-button__label">Button</span>
     <div class="antd-button__wave-shadow"></div>
   </button>
+  <script>
+    new antd.AntdWaveShadow(document.querySelector('.antd-button'));
+  </script>
 </body>
 </html>
