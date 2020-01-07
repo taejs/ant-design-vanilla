@@ -9,14 +9,13 @@ export class AnimationJob extends RAFJob {
     constructor (block, time, duration) {
         super(block, time);
         this.duration = duration;
-        this.deactivationTime = this.executionTime + this.duration;
     }
-    start () {
-        const isExecuting = time => this.executionTime <= time && time <= this.deactivationTime;
+    start (startTime) {
         const f = (time) => {
-            if(!isExecuting(time)) return;
-            this.block(this.invocationTime - time / this.duration);
-            requestAnimationFrame(f);
+            const progress = time-startTime;
+            console.log(progress);
+            this.block(progress);
+            if(progress < this.duration) requestAnimationFrame(f);
         }
         requestAnimationFrame(f);
     }

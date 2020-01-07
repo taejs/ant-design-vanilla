@@ -6,6 +6,6 @@ export class RAFJob {
     constructor (block, time) {
         this.block = block;
         this.invocationTime = performance.now();
-        this.executionTime = this.executionTime + time;
+        this.executionTime = this.invocationTime + time;
     }
 }

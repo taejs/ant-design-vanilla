@@ -8,15 +8,16 @@ export class AntdWaveShadow  {
 
     private handleContainerClick : EventListener;
 
-    constructor(root) {
-        this.root = root;
+    constructor(root : HTMLElement) {
+        this.root = root.querySelector('.antd-button__wave-shadow');
         this.disabled = false;
         this.adapter = AntdWaveShadow.createAdapter(this);
         this.animationQueue = new Set();
-        this.handleContainerClick = () =>this.activate;
+        this.handleContainerClick = () =>this.activate();
+        this.initialSyncWithDOM();
     }
     
-    static attachTo(root : Element) : AntdWaveShadow {
+    static attachTo(root : HTMLElement) : AntdWaveShadow {
         return new AntdWaveShadow(root);
     }
 
@@ -39,24 +40,29 @@ export class AntdWaveShadow  {
       }
 
       activate(){
-        if(this.adapter.isLayerDisabled) return;
+        if(this.adapter.isLayerDisabled()) return;
         const animationWave = (progress) => {
             const MAX_SPREAD = 6;
-            let spread = MAX_SPREAD * progress;
-            this.adapter.updateCssVariable('box-shadow', `0px 0px 0px ${spread}px inherit`);
+            let spread = MAX_SPREAD * progress / 200;
+            this.adapter.updateCssVariable('box-shadow', `0px 0px 0px ${spread}px rgba(24, 144, 255, 0.2)`);
         }
-        this.animationQueue.add(new AnimationJob(animationWave, 0, 300));
+        const animationFadeOut = (progress) => {
+            const MAX_SPREAD = 1;
+            let opacity = MAX_SPREAD *(2000- progress) / 2000;
+            this.adapter.updateCssVariable('opacity', opacity);
+        }
+        this.animationQueue.add(new AnimationJob(animationFadeOut, 0, 2000));
+        this.animationQueue.add(new AnimationJob(animationWave, 0, 200));
 
         const f = (time) => {
             this.animationQueue.forEach(item => {
                 if(item.executionTime > time) return;
                 this.animationQueue.delete(item);
-                item.start();
+                item.start(time);
             });
             requestAnimationFrame(f);
         };
         requestAnimationFrame(f);
-        //this.animationQueue.add(new RAFJob(animationFadeOut,  300));
       }
 
       deactivate() {
