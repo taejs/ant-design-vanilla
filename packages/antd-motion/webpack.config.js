@@ -16,13 +16,14 @@ module.exports = {
             presets: [
               '@babel/preset-env',
               '@babel/preset-typescript'
-            ],
+            ]
           }
         }
       }
     ]
   },
-  devtool: 'source-map',
-  // https://webpack.js.org/concepts/mode/#mode-development
-  mode: 'development'
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
+  devtool: 'source-map'
 };
