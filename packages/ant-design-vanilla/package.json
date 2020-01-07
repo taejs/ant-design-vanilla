@@ -1,0 +1,12 @@
+{
+  "name": "ant-design-vanilla",
+  "version": "0.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-typescript": "^7.7.7"
+  }
+}
