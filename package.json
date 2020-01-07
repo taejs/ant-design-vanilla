@@ -8,6 +8,10 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.4.1",
     "extract-loader": "^3.1.0",
     "file-loader": "^5.0.2",
@@ -21,5 +25,8 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "antd-motion": "file:packages\\antd-motion"
   }
 }
