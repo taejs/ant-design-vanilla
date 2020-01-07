@@ -3,13 +3,14 @@ import { AnimationJob } from "./utils/AnimationJob";
 export class AntdWaveShadow  {
     root : HTMLElement;
     adapter : any;
-    disabled : boolean = false;
     animationQueue : Set<AnimationJob>
+    disabled : boolean;
 
     private handleContainerClick : EventListener;
 
     constructor(root) {
         this.root = root;
+        this.disabled = false;
         this.adapter = AntdWaveShadow.createAdapter(this);
         this.animationQueue = new Set();
         this.handleContainerClick = () =>this.activate;
@@ -27,13 +28,13 @@ export class AntdWaveShadow  {
             deregisterDocumentInteractionHandler: (evtType, handler) =>
                 document.documentElement.removeEventListener(evtType, handler),
             deregisterInteractionHandler: (evtType, handler) =>
-                (instance.root_ as HTMLElement).removeEventListener(evtType, handler),
+                (instance.root as HTMLElement).removeEventListener(evtType, handler),
             registerDocumentInteractionHandler: (evtType, handler) =>
                 document.documentElement.addEventListener(evtType, handler),
             registerInteractionHandler: (evtType, handler) =>
-            (instance.root_ as HTMLElement).addEventListener(evtType, handler),
-            removeClass: (className) => instance.root_.classList.remove(className),
-            updateCssVariable: (varName, value) => (instance.root_ as HTMLElement).style.setProperty(varName, value),
+            (instance.root as HTMLElement).addEventListener(evtType, handler),
+            removeClass: (className) => instance.root.classList.remove(className),
+            updateCssVariable: (varName, value) => (instance.root as HTMLElement).style.setProperty(varName, value),
         };
       }
 
