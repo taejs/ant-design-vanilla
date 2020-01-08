@@ -1,10 +1,14 @@
 @import '../antd-theme/variables.scss';
-$mdc-button-ripple-target: ".antd-button__wave-shadow";
+@import '../antd-motion/mixins.scss';
+@import '../antd-theme/function.scss';
+
+$antd-button-wave-shadow-target: ".antd-button__wave-shadow";
 
 .antd-button {
   overflow: visible;
   position: relative;
-  color: $antd-theme-primary;
+  background: $antd-theme-primary;
+  color : #fff;
   box-shadow: 0 0 0 0 $antd-theme-primary;
   border: 1px solid $antd-theme-primary;
   border-radius: 4px;
@@ -13,12 +17,20 @@ $mdc-button-ripple-target: ".antd-button__wave-shadow";
   height: 32px;
   outline-color: initial;
   outline :0;
+  transition : 0.2s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
+    background: get-color($antd-theme-primary-colorset, 5);
+  }
+  &:active {
+    background: get-color($antd-theme-primary-colorset, 7);
   }
 
-  #{$mdc-button-ripple-target} {
-    
+  &--wave-shadow-activation {
+    #{$antd-button-wave-shadow-target} {
+      display: block;
+    }
   }
 }
