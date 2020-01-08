@@ -1,10 +1,8 @@
-import { AnimationJob } from "./utils/AnimationJob";
 import BezierEasing from 'bezier-easing';
 
 export class AntdWaveShadow  {
     root : HTMLElement;
     adapter : any;
-    animationQueue : Set<AnimationJob>
     disabled : boolean;
 
     private handleContainerClick : EventListener;
@@ -13,7 +11,6 @@ export class AntdWaveShadow  {
         this.root = root;
         this.disabled = false;
         this.adapter = AntdWaveShadow.createAdapter(this);
-        this.animationQueue = new Set();
         this.handleContainerClick = () =>this.activate();
         this.initialSyncWithDOM();
     }
@@ -41,32 +38,8 @@ export class AntdWaveShadow  {
       }
 
       activate(){
-        if(this.adapter.isLayerDisabled()) return;
-        const easing = BezierEasing(0.08, 0.82, 0.17, 1);
-        const animationWave = (progress) => {
-            const MAX_SPREAD = 6;
-            progress = (easing(progress / 400)).toFixed(2);
-            let spread = MAX_SPREAD * progress;
-            this.adapter.updateCssVariable('box-shadow', `0px 0px 0px ${spread}px rgba(24, 144, 255, 0.2)`);
-        }
-        const animationFadeOut = (progress) => {
-            progress = (easing(progress / 2000)).toFixed(2);
-            console.log(progress);
-            let opacity = 1 - progress;
-            this.adapter.updateCssVariable('opacity', opacity);
-        }
-        this.animationQueue.add(new AnimationJob(animationFadeOut, 0, 2000));
-        this.animationQueue.add(new AnimationJob(animationWave, 0, 400));
-
-        const f = (time) => {
-            this.animationQueue.forEach(item => {
-                if(item.executionTime > time) return;
-                this.animationQueue.delete(item);
-                item.start(time);
-            });
-            requestAnimationFrame(f);
-        };
-        requestAnimationFrame(f);
+        this.adapter.removeClass('antd-button--wave-shadow-activation')
+        this.adapter.addClass('antd-button--wave-shadow-activation')
       }
 
       deactivate() {

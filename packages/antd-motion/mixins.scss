@@ -1,0 +1,29 @@
+@mixin antd-wave-shadow-styles($target : "&") {
+  #{$target} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 $antd-theme-primary;
+    opacity: 0.2;
+    pointer-events: none;
+    animation : fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes waveEffect {
+    100% {
+        box-shadow: 0 0 0 $antd-theme-primary;
+        box-shadow: 0 0 0 $wave-animation-width $antd-theme-primary;
+    }
+  }
+
+  @keyframes fadeEffect {
+    100% {
+        opacity: 0;
+    }
+  }
+}
