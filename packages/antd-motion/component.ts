@@ -1,4 +1,5 @@
 import { AnimationJob } from "./utils/AnimationJob";
+import BezierEasing from 'bezier-easing';
 
 export class AntdWaveShadow  {
     root : HTMLElement;
@@ -23,6 +24,7 @@ export class AntdWaveShadow  {
 
     static createAdapter(instance : AntdWaveShadow): any {
         return {
+            requestFrame : (step)=>requestAnimationFrame ? requestAnimationFrame(step) : setTimeout(step, 16),
             isLayerDisabled: ()=>Boolean(instance.disabled),
             addClass: (className) => instance.root.classList.add(className),
             containsEventTarget: (target) => instance.root.contains(target as Node),
@@ -41,18 +43,21 @@ export class AntdWaveShadow  {
 
       activate(){
         if(this.adapter.isLayerDisabled()) return;
+        const easing = BezierEasing(0.08, 0.82, 0.17, 1);
         const animationWave = (progress) => {
             const MAX_SPREAD = 6;
-            let spread = MAX_SPREAD * progress / 200;
+            progress = (easing(progress / 400)).toFixed(2);
+            let spread = MAX_SPREAD * progress;
             this.adapter.updateCssVariable('box-shadow', `0px 0px 0px ${spread}px rgba(24, 144, 255, 0.2)`);
         }
         const animationFadeOut = (progress) => {
-            const MAX_SPREAD = 1;
-            let opacity = MAX_SPREAD *(2000- progress) / 2000;
+            progress = (easing(progress / 2000)).toFixed(2);
+            console.log(progress);
+            let opacity = 1 - progress;
             this.adapter.updateCssVariable('opacity', opacity);
         }
         this.animationQueue.add(new AnimationJob(animationFadeOut, 0, 2000));
-        this.animationQueue.add(new AnimationJob(animationWave, 0, 200));
+        this.animationQueue.add(new AnimationJob(animationWave, 0, 400));
 
         const f = (time) => {
             this.animationQueue.forEach(item => {
@@ -60,9 +65,9 @@ export class AntdWaveShadow  {
                 this.animationQueue.delete(item);
                 item.start(time);
             });
-            requestAnimationFrame(f);
+            this.adapter.requestFrame(f);
         };
-        requestAnimationFrame(f);
+        this.adapter.requestFrame(f);
       }
 
       deactivate() {

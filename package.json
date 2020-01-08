@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "ant-design-vanilla": "file:packages\\ant-design-vanilla",
-    "antd-motion": "file:packages\\antd-motion"
+    "antd-motion": "file:packages\\antd-motion",
+    "bezier-easing": "^2.1.0"
   }
 }

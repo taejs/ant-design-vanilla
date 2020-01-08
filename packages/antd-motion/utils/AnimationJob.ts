@@ -13,7 +13,6 @@ export class AnimationJob extends RAFJob {
     start (startTime) {
         const f = (time) => {
             const progress = time-startTime;
-            console.log(progress);
             this.block(progress);
             if(progress < this.duration) requestAnimationFrame(f);
         }
