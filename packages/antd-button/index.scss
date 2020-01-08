@@ -1,6 +1,7 @@
 @import '../antd-theme/variables.scss';
 
 .antd-button {
+  overflow: visible;
   position: relative;
   color: $antd-theme-primary;
   box-shadow: 0 0 0 0 $antd-theme-primary;
