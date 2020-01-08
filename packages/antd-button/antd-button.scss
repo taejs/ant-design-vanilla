@@ -1,0 +1,24 @@
+@import '../antd-theme/variables.scss';
+$mdc-button-ripple-target: ".antd-button__wave-shadow";
+
+.antd-button {
+  overflow: visible;
+  position: relative;
+  color: $antd-theme-primary;
+  box-shadow: 0 0 0 0 $antd-theme-primary;
+  border: 1px solid $antd-theme-primary;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 14px;
+  height: 32px;
+  outline-color: initial;
+  outline :0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  #{$mdc-button-ripple-target} {
+    
+  }
+}
