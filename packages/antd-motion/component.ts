@@ -10,7 +10,7 @@ export class AntdWaveShadow  {
     private handleContainerClick : EventListener;
 
     constructor(root : HTMLElement) {
-        this.root = root.querySelector('.antd-button__wave-shadow');
+        this.root = root;
         this.disabled = false;
         this.adapter = AntdWaveShadow.createAdapter(this);
         this.animationQueue = new Set();
@@ -24,7 +24,6 @@ export class AntdWaveShadow  {
 
     static createAdapter(instance : AntdWaveShadow): any {
         return {
-            requestFrame : (step)=>requestAnimationFrame ? requestAnimationFrame(step) : setTimeout(step, 16),
             isLayerDisabled: ()=>Boolean(instance.disabled),
             addClass: (className) => instance.root.classList.add(className),
             containsEventTarget: (target) => instance.root.contains(target as Node),
@@ -65,18 +64,18 @@ export class AntdWaveShadow  {
                 this.animationQueue.delete(item);
                 item.start(time);
             });
-            this.adapter.requestFrame(f);
+            requestAnimationFrame(f);
         };
-        this.adapter.requestFrame(f);
+        requestAnimationFrame(f);
       }
 
       deactivate() {
-          this.adapter.deregisterDocumentInteractionHandler('click', this.handleContainerClick);
+          this.adapter.deregisterInteractionHandler('click', this.handleContainerClick);
       }
 
     initialSyncWithDOM() {
         const root = this.root as HTMLElement;
-        this.adapter.registerDocumentInteractionHandler('click',  this.handleContainerClick);
+        this.adapter.registerInteractionHandler('click',  this.handleContainerClick);
         this.disabled = root.hasAttribute('disabled');
     }
 }
