@@ -19,6 +19,8 @@ $antd-button-wave-shadow-target: ".antd-button__wave-shadow";
   outline :0;
   transition : 0.2s;
 
+  @include antd-wave-shadow-styles($target : $antd-button-wave-shadow-target);
+
   &:hover,
   &:focus {
     cursor: pointer;
