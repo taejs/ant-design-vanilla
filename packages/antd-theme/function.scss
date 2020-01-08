@@ -1,0 +1,5 @@
+@import './color-palette.scss';
+
+@function get-color($color, $value: 0) {
+  @return map-get(map-get($antd-colors, $color), $value);
+}
