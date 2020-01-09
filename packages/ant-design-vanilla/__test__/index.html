@@ -8,12 +8,43 @@
   <script src="../dist/bundle.js"></script>
 </head>
 <body>
-  <button class="antd-button">
-    <span class="antd-button__label">Button</span>
-    <div class="antd-button__wave-shadow"></div>
-  </button>
+  <section>
+    <h1>Button</h1>
+    <p>To trigger an operation.</p>
+    <h2>When To Use</h2>
+    <p>A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic. </p>
+    <h2>Examples</h2>
+    <div>
+      <a>Type</a>
+      <p>There are primary button, default button, dashed button, danger button and link button in antd.</p>
+      <button class="antd-button">
+        <span class="antd-button__label">Button</span>
+        <div class="antd-button__wave-shadow"></div>
+      </button>
+      <button class="antd-button antd-button--primary">
+        <span class="antd-button__label">Button</span>
+        <div class="antd-button__wave-shadow"></div>
+      </button>
+      <button class="antd-button antd-button--dashed">
+        <span class="antd-button__label">Button</span>
+        <div class="antd-button__wave-shadow"></div>
+      </button>
+      <button class="antd-button antd-button--danger">
+        <span class="antd-button__label">Button</span>
+        <div class="antd-button__wave-shadow"></div>
+      </button>
+      <button class="antd-button antd-button--link">
+        <span class="antd-button__label">Button</span>
+        <div class="antd-button__wave-shadow"></div>
+      </button>
+    </div>
+  </section>
   <script>
     new antd.AntdWaveShadow(document.querySelector('.antd-button'));
+    new antd.AntdWaveShadow(document.querySelector('.antd-button--primary'));
+    new antd.AntdWaveShadow(document.querySelector('.antd-button--dashed'));
+    new antd.AntdWaveShadow(document.querySelector('.antd-button--danger'));
+    new antd.AntdWaveShadow(document.querySelector('.antd-button--large'));
   </script>
 </body>
 </html>
