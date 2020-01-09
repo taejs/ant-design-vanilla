@@ -6,6 +6,7 @@ export class AntdWaveShadow  {
     disabled : boolean;
 
     private handleContainerClick : EventListener;
+    private activationTimer : NodeJS.Timeout;
 
     constructor(root : HTMLElement) {
         this.root = root;
@@ -37,14 +38,23 @@ export class AntdWaveShadow  {
         };
       }
 
-      activate(){
-        this.adapter.removeClass('antd-button--wave-shadow-activation')
-        this.adapter.addClass('antd-button--wave-shadow-activation')
-      }
+    activate(){
+        if(this.activationTimer) clearTimeout(this.activationTimer);
 
-      deactivate() {
-          this.adapter.deregisterInteractionHandler('click', this.handleContainerClick);
-      }
+        this.adapter.removeClass('antd-button--wave-shadow-activation');
+        requestAnimationFrame(()=>{
+          this.adapter.addClass('antd-button--wave-shadow-activation');
+        });
+
+        this.activationTimer = setTimeout(()=> {
+          this.adapter.removeClass('antd-button--wave-shadow-activation');
+          this.activationTimer = null;
+        }, 2000);
+    }
+
+    deactivate() {
+        this.adapter.deregisterInteractionHandler('click', this.handleContainerClick);
+    }
 
     initialSyncWithDOM() {
         const root = this.root as HTMLElement;
