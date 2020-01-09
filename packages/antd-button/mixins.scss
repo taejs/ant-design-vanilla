@@ -1,0 +1,76 @@
+@import '../antd-theme/variables.scss';
+@import '../antd-motion/mixins.scss';
+@import '../antd-theme/function.scss';
+
+$antd-button-wave-shadow-target: ".antd-button__wave-shadow";
+
+@mixin antd-core-button-style() {
+    --box-shadow-color : #{$antd-theme-primary};
+    @include antd-button();
+    @include antd-wave-shadow-styles($target : $antd-button-wave-shadow-target);
+
+    &:hover,
+    &:focus {
+        @include antd-button-ink-color($antd-theme-primary);
+        @include antd-button-outline-color($antd-theme-primary);
+        cursor: pointer;
+    }
+    &:active {
+        @include antd-button-ink-color(get-color($antd-theme-primary-colorset, 7));
+        @include antd-button-outline-color(get-color($antd-theme-primary-colorset, 7));
+    }
+}
+
+@mixin antd-button-base($bg-color : $antd-theme-primary, $text-color : $antd-theme-primary, $border-color : transparent) {
+    @include antd-button-container-fill-color($bg-color);
+    @include antd-button-outline-color($border-color);
+    @include antd-button-ink-color($text-color);
+}
+
+@mixin antd-button-colored($colorset) {
+    $font-color : get-color('grey', 1);
+    $default : get-color($colorset, 6);
+    $lighter : get-color($colorset, 5);
+    $darker : get-color($colorset, 7);
+    --box-shadow-color : #{$default};
+
+    @include antd-button-base($default, $font-color, $default);
+    
+    &:hover,
+    &:focus {
+        @include antd-button-base($lighter, $font-color, $lighter);
+    }
+    &:active {
+        @include antd-button-base($darker, $font-color, $darker);
+    }
+}
+
+@mixin antd-button() {
+    overflow: visible;
+    position: relative;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 14px;
+    height: 32px;
+    outline-color: initial;
+    outline :0;
+    transition : 0.2s;
+    background-color: get-color('grey', 1);
+    color: rgba(0, 0, 0, 0.65);
+    border: 1px solid get-color('grey', 5);
+    box-shadow: 0 0 0 0 var(--box-shadow-color);
+}
+
+@mixin antd-button-outline-color($color) {
+    border-color: $color;
+  }
+
+@mixin antd-button-container-fill-color($color) {
+    &:not(:disabled) {
+        background-color:$color;
+    }
+}
+
+@mixin antd-button-ink-color($color) {
+    color : $color
+}

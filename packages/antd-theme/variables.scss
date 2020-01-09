@@ -2,4 +2,5 @@
 
 $antd-theme-primary-colorset : "blue";
 $antd-theme-primary: get-color($antd-theme-primary-colorset, 6);
+$antd-theme-on-primary : get-color($antd-theme-primary-colorset, 5);
 $wave-animation-width: 6px;

@@ -7,7 +7,7 @@
     left: 0;
     display: none;
     border-radius: inherit;
-    box-shadow: 0 0 0 0 $antd-theme-primary;
+    box-shadow: 0 0 0 0 var(--box-shadow-color);
     opacity: 0.2;
     pointer-events: none;
     animation : fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
@@ -16,8 +16,8 @@
 
   @keyframes waveEffect {
     100% {
-        box-shadow: 0 0 0 $antd-theme-primary;
-        box-shadow: 0 0 0 $wave-animation-width $antd-theme-primary;
+        box-shadow: 0 0 0 var(--box-shadow-color);
+        box-shadow: 0 0 0 $wave-animation-width var(--box-shadow-color);
     }
   }
 
