@@ -1,0 +1,58 @@
+@import '../antd-theme/variables.scss';
+@import '../antd-theme/function.scss';
+
+.ant-menu {
+  font-size:14px;
+  width : 256px; // quick fix for test
+  border-right: get-color('grey', 4);
+  color: $ant-theme-text;
+  overflow: hidden;
+}
+
+.ant-menu:hover{
+  overflow: auto;
+}
+
+.ant-menu * {
+  list-style: none;
+}
+.ant-menu__items{
+  margin : 0;
+  padding: 0;
+}
+.ant-menu__item {
+  transition: 0.2s;
+  cursor:pointer;
+}
+.ant-menu__item-title{
+  padding-left : 16px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.ant-menu__item-title:hover{
+  color : $ant-theme-primary;
+}
+
+.ant-menu__sub-items{
+  margin : 0;
+  padding: 0;
+}
+.ant-menu__sub-item {
+  transition: 0.2s;
+  cursor:pointer;
+}
+.ant-menu__sub-item-title{
+  padding-left : 48px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.ant-menu__sub-item-title:hover{
+  color:$ant-theme-primary;
+}
+.ant-menu__sub-item--selected{
+  background : get-color($ant-theme-primary-colorset, 1);
+  color :$ant-theme-primary;
+  border-right : 2px solid $ant-theme-primary;
+}
