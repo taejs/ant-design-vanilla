@@ -1,6 +1,6 @@
 @import './function.scss';
 
-$antd-theme-primary-colorset : "blue";
-$antd-theme-primary: get-color($antd-theme-primary-colorset, 6);
-$antd-theme-on-primary : get-color($antd-theme-primary-colorset, 5);
+$ant-theme-primary-colorset : "blue";
+$ant-theme-primary: get-color($ant-theme-primary-colorset, 6);
+$ant-theme-on-primary : get-color($ant-theme-primary-colorset, 5);
 $wave-animation-width: 6px;
