@@ -1,4 +1,4 @@
-import BezierEasing from 'bezier-easing';
+import {cssClasses, numbers} from './constants';
 
 export class AntdWaveShadow  {
     protected root : HTMLElement;
@@ -50,15 +50,15 @@ export class AntdWaveShadow  {
     activate(){
         if(this.activationTimer) clearTimeout(this.activationTimer);
 
-        this.adapter.removeClass('ant-button--wave-shadow-activation');
+        this.adapter.removeClass(cssClasses.WAVE_ACTIVATION);
         requestAnimationFrame(()=>{
-          this.adapter.addClass('ant-button--wave-shadow-activation');
+          this.adapter.addClass(cssClasses.WAVE_ACTIVATION);
         });
 
         this.activationTimer = setTimeout(()=> {
-          this.adapter.removeClass('ant-button--wave-shadow-activation');
+          this.adapter.removeClass(cssClasses.WAVE_ACTIVATION);
           this.activationTimer = null;
-        }, 2000);
+        }, numbers.ANIMATING_DURATION_MS);
     }
 
     private initialSyncWithDOM() {
