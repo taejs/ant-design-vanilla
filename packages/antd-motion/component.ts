@@ -1,10 +1,9 @@
 import BezierEasing from 'bezier-easing';
 
 export class AntdWaveShadow  {
-    root : HTMLElement;
-    adapter : any;
-    disabled : boolean;
-
+    protected root : HTMLElement;
+    private adapter : any;
+    private disabled : boolean;
     private handleContainerClick : EventListener;
     private activationTimer : NodeJS.Timeout;
 
@@ -14,6 +13,16 @@ export class AntdWaveShadow  {
         this.adapter = AntdWaveShadow.createAdapter(this);
         this.handleContainerClick = () =>this.activate();
         this.initialSyncWithDOM();
+        this.init();
+    }
+    
+    init() {
+        this.adapter.registerInteractionHandler('click',  this.handleContainerClick);
+    }
+
+    destroy() {
+        clearTimeout(this.activationTimer);
+        this.adapter.deregisterInteractionHandler('click', this.handleContainerClick);
     }
     
     static attachTo(root : HTMLElement) : AntdWaveShadow {
@@ -52,13 +61,8 @@ export class AntdWaveShadow  {
         }, 2000);
     }
 
-    deactivate() {
-        this.adapter.deregisterInteractionHandler('click', this.handleContainerClick);
-    }
-
-    initialSyncWithDOM() {
+    private initialSyncWithDOM() {
         const root = this.root as HTMLElement;
-        this.adapter.registerInteractionHandler('click',  this.handleContainerClick);
         this.disabled = root.hasAttribute('disabled');
     }
 }
