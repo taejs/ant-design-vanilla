@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin ant-wave-shadow-styles($target : "&") {
   #{$target} {
     position: absolute;
@@ -10,7 +12,7 @@
     box-shadow: 0 0 0 0 var(--box-shadow-color);
     opacity: 0.2;
     pointer-events: none;
-    animation : fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
+    animation : fadeEffect $ant-wave-shadow-animating-duration cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect $ant-wave-shadow-wave-effect-duration cubic-bezier(0.08, 0.82, 0.17, 1);
     animation-fill-mode: forwards;
   }
 
