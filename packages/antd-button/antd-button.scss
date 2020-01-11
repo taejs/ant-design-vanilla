@@ -1,8 +1,7 @@
 @import './mixins.scss';
 
-.antd-button{
-  @include antd-core-button-style;
-  
+.ant-button{
+  @include ant-core-button-style;
 
     &--round {
       border-radius: 40px;
@@ -27,17 +26,17 @@
     }
 
     &--primary {
-      @include antd-button-colored($antd-theme-primary-colorset);
+      @include ant-button-colored($antd-theme-primary-colorset);
     }
 
     &--danger {        
-      @include antd-button-colored('red');
+      @include ant-button-colored('red');
     }
 
     &--link {
       box-shadow: 0;
       border: 0;
-      @include antd-button-ink-color($antd-theme-primary);
+      @include ant-button-ink-color($antd-theme-primary);
     }
 
     &--dashed {
@@ -49,7 +48,7 @@
     }
 
   &--wave-shadow-activation {
-      #{$antd-button-wave-shadow-target} {
+      #{$ant-button-wave-shadow-target} {
           display: block;
       }
     }

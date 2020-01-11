@@ -1,4 +1,4 @@
-@mixin antd-wave-shadow-styles($target : "&") {
+@mixin ant-wave-shadow-styles($target : "&") {
   #{$target} {
     position: absolute;
     top: 0;

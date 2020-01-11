@@ -50,13 +50,13 @@ export class AntdWaveShadow  {
     activate(){
         if(this.activationTimer) clearTimeout(this.activationTimer);
 
-        this.adapter.removeClass('antd-button--wave-shadow-activation');
+        this.adapter.removeClass('ant-button--wave-shadow-activation');
         requestAnimationFrame(()=>{
-          this.adapter.addClass('antd-button--wave-shadow-activation');
+          this.adapter.addClass('ant-button--wave-shadow-activation');
         });
 
         this.activationTimer = setTimeout(()=> {
-          this.adapter.removeClass('antd-button--wave-shadow-activation');
+          this.adapter.removeClass('ant-button--wave-shadow-activation');
           this.activationTimer = null;
         }, 2000);
     }
