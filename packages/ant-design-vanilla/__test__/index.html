@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../../antd-button/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-card/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-menu/dist/bundle.css"></link>
+  <link rel="stylesheet" href="../../antd-checkbox/dist/bundle.css"></link>
   <script src="../dist/bundle.js"></script>
 </head>
 <body>
@@ -88,6 +89,20 @@
       </div>
   </div>
   </section>
+  <section>
+    <label class="ant-checkbox">
+      <div class="ant-checkbox__checkmark">
+          <input type="checkbox" class="ant-checkbox__native-control" id="id">
+      </div>
+      <div class="ant-checkbox__label">Option 1</div>
+  </label>
+
+  <label class="ant-checkbox ant-checkbox--checked">
+    <div class="ant-checkbox__checkmark">
+        <input type="checkbox" class="ant-checkbox__native-control" id="id">
+    </div>
+    <div class="ant-checkbox__label">Option 1</div>
+</label>
   <script>
     new antd.AntdWaveShadow(document.querySelector('.ant-button'));
     new antd.AntdWaveShadow(document.querySelector('.ant-button--primary'));
