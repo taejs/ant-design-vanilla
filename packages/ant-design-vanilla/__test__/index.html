@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../../antd-card/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-menu/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-checkbox/dist/bundle.css"></link>
+  <link rel="stylesheet" href="../../antd-radio/dist/bundle.css"></link>
+  <link rel="stylesheet" href="../../antd-input/dist/bundle.css"></link>
   <script src="../dist/bundle.js"></script>
 </head>
 <body>
@@ -91,18 +93,36 @@
   </section>
   <section>
     <label class="ant-checkbox">
-      <div class="ant-checkbox__checkmark">
+      <div class="ant-checkbox__mark-wrapper">
           <input type="checkbox" class="ant-checkbox__native-control" id="id">
+          <div class="ant-checkbox__mark"></div>
       </div>
-      <div class="ant-checkbox__label">Option 1</div>
+      <span class="ant-checkbox__label">Option 1</div>
   </label>
-
-  <label class="ant-checkbox ant-checkbox--checked">
-    <div class="ant-checkbox__checkmark">
-        <input type="checkbox" class="ant-checkbox__native-control" id="id">
+  <label class="ant-radio">
+    <div class="ant-raido__mark-wrapper">
+        <input type="radio" class="ant-radio__native-control" name="a" id="id">
+        <div class="ant-radio__mark"> </div>
     </div>
-    <div class="ant-checkbox__label">Option 1</div>
+    <span class="ant-radio__label">Option 1</div>
 </label>
+<label class="ant-radio">
+    <div class="ant-raido__mark-wrapper">
+        <input type="radio" class="ant-radio__native-control"  name="a" id="id">
+        <div class="ant-radio__mark"> </div>
+    </div>
+    <div class="ant-radio__label">Option 2</div>
+</label>
+
+<label class="ant-radio ant-radio--disabled">
+    <div class="ant-raido__mark-wrapper">
+        <input type="radio" class="ant-radio__native-control" id="id">
+        <div class="ant-radio__mark"> </div>
+    </div>
+    <span class="ant-radio__label">Option 1</span>
+</label>
+
+
   <script>
     new antd.AntdWaveShadow(document.querySelector('.ant-button'));
     new antd.AntdWaveShadow(document.querySelector('.ant-button--primary'));
