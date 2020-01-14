@@ -26,7 +26,7 @@
     }
 
     &--primary {
-      @include ant-button-colored($antd-theme-primary-colorset);
+      @include ant-button-colored($ant-theme-primary-colorset);
     }
 
     &--danger {        
@@ -36,7 +36,7 @@
     &--link {
       box-shadow: 0;
       border: 0;
-      @include ant-button-ink-color($antd-theme-primary);
+      @include ant-button-ink-color($ant-theme-primary);
     }
 
     &--dashed {

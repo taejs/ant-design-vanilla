@@ -2,50 +2,50 @@
 @import '../antd-motion/mixins.scss';
 @import '../antd-theme/function.scss';
 
-$antd-button-wave-shadow-target: ".antd-button__wave-shadow";
+$ant-button-wave-shadow-target: ".ant-button__wave-shadow";
 
-@mixin antd-core-button-style() {
-    --box-shadow-color : #{$antd-theme-primary};
-    @include antd-button();
-    @include antd-wave-shadow-styles($target : $antd-button-wave-shadow-target);
+@mixin ant-core-button-style() {
+    --box-shadow-color : #{$ant-theme-primary};
+    @include ant-button();
+    @include ant-wave-shadow-styles($target : $ant-button-wave-shadow-target);
 
     &:hover,
     &:focus {
-        @include antd-button-ink-color($antd-theme-primary);
-        @include antd-button-outline-color($antd-theme-primary);
+        @include ant-button-ink-color($ant-theme-primary);
+        @include ant-button-outline-color($ant-theme-primary);
         cursor: pointer;
     }
     &:active {
-        @include antd-button-ink-color(get-color($antd-theme-primary-colorset, 7));
-        @include antd-button-outline-color(get-color($antd-theme-primary-colorset, 7));
+        @include ant-button-ink-color(get-color($ant-theme-primary-colorset, 7));
+        @include ant-button-outline-color(get-color($ant-theme-primary-colorset, 7));
     }
 }
 
-@mixin antd-button-base($bg-color : $antd-theme-primary, $text-color : $antd-theme-primary, $border-color : transparent) {
-    @include antd-button-container-fill-color($bg-color);
-    @include antd-button-outline-color($border-color);
-    @include antd-button-ink-color($text-color);
+@mixin ant-button-base($bg-color : $ant-theme-primary, $text-color : $ant-theme-primary, $border-color : transparent) {
+    @include ant-button-container-fill-color($bg-color);
+    @include ant-button-outline-color($border-color);
+    @include ant-button-ink-color($text-color);
 }
 
-@mixin antd-button-colored($colorset) {
+@mixin ant-button-colored($colorset) {
     $font-color : get-color('grey', 1);
     $default : get-color($colorset, 6);
     $lighter : get-color($colorset, 5);
     $darker : get-color($colorset, 7);
     --box-shadow-color : #{$default};
 
-    @include antd-button-base($default, $font-color, $default);
+    @include ant-button-base($default, $font-color, $default);
     
     &:hover,
     &:focus {
-        @include antd-button-base($lighter, $font-color, $lighter);
+        @include ant-button-base($lighter, $font-color, $lighter);
     }
     &:active {
-        @include antd-button-base($darker, $font-color, $darker);
+        @include ant-button-base($darker, $font-color, $darker);
     }
 }
 
-@mixin antd-button() {
+@mixin ant-button() {
     overflow: visible;
     position: relative;
     border-radius: 4px;
@@ -61,16 +61,16 @@ $antd-button-wave-shadow-target: ".antd-button__wave-shadow";
     box-shadow: 0 0 0 0 var(--box-shadow-color);
 }
 
-@mixin antd-button-outline-color($color) {
+@mixin ant-button-outline-color($color) {
     border-color: $color;
   }
 
-@mixin antd-button-container-fill-color($color) {
+@mixin ant-button-container-fill-color($color) {
     &:not(:disabled) {
         background-color:$color;
     }
 }
 
-@mixin antd-button-ink-color($color) {
+@mixin ant-button-ink-color($color) {
     color : $color
 }
