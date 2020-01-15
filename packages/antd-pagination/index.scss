@@ -1,0 +1,28 @@
+@import '../antd-theme/function.scss';
+@import '../antd-theme/variables.scss';
+.ant-pagination{
+    margin:0;
+    padding:0;
+}
+.ant-pagination__item {
+    cursor: pointer;
+    box-sizing: border-box;
+    vertical-align: middle;
+    display: inline-block;
+    border:1px solid #d9d9d9;
+    color:rgba(0, 0, 0, 0.65);
+    width:32px;
+    height:32px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 2px;
+    user-select: none;
+
+    & + & {
+        margin-left:5px;
+    }
+}
+.ant-pagination__item--selected {
+    color : $ant-theme-primary;
+    border-color : $ant-theme-primary;
+}
