@@ -1,0 +1,45 @@
+@import '../antd-theme/variables.scss';
+@import '../antd-theme/function.scss';
+
+.ant-timeline{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+.ant-timeline__item{
+  position: relative;
+  padding-bottom:20px;
+  &:last-of-type{
+    padding:0;
+  }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 4px;
+    height: 100%;
+    width: 2px;
+    background: #f0f0f0;
+    top: 16px;
+  }
+  &:last-of-type:before{
+    display: none;
+  }
+}
+.ant-timeline__mark{
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  border:2px solid $ant-theme-primary;
+  background-color: #fff;
+  top:7px;
+}
+
+.ant-timeline__content{
+  word-break: keep-all;
+  margin-left:18px;
+  position: relative;
+}
