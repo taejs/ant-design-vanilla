@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../antd-radio/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-input/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-pagination/dist/bundle.css"></link>
+  <link rel="stylesheet" href="../../antd-switch/dist/bundle.css"></link>
   <script src="../dist/bundle.js"></script>
 </head>
 <body>
@@ -151,6 +152,15 @@
         <a class="ant-pagenation__link"></a>
     </li>
 </ul>
+<label class="ant-switch ant-switch--checked">
+    <div class="ant-switch__label ant-switch__label--positive">o</div>
+    <div class="ant-switch__label ant-switch__label--negative">x</div>
+    <div class="ant-switch__mark-wrapper">
+        <input type="checkbox" class="ant-switch__native-control">
+        <div class="ant-switch__mark"></div>
+    </div>
+</label>
+
 </section>
   <script>
     new antd.AntdWaveShadow(document.querySelector('.ant-button'));
