@@ -1,0 +1,46 @@
+@import '../antd-theme/function.scss';
+@import '../antd-theme/variables.scss';
+
+.ant-tag{
+    display: inline-block;
+    display:inline-flex;
+    cursor: default;
+    font-size:12px;
+    border-radius:2px;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color: rgba(0, 0, 0, 0.65);
+    background: #fafafa;
+    border: 1px solid #d9d9d9;
+    padding: 0 7px;
+    vertical-align: middle;
+    line-height:20px;
+    height:22px;
+    transition: 0.2s;
+    margin-right:7px;
+}
+
+.ant-tag--checkable{
+    color: rgba(0, 0, 0, 0.65);
+    background:#fff;
+    border-color:transparent;
+}
+.ant-tag--checkable:hover{
+    color: $ant-theme-primary;
+}
+.ant-tag--checked{
+    color:#fff;
+    background: $ant-theme-primary;
+}
+.ant-tag--checked:hover{
+    color: #fff;
+    background : get-color($ant-theme-primary-colorset, 5);
+}
+
+.ant-tag__remove{
+    margin-left:3px;
+    width:10px;
+    height:10px;
+    display: inline-block;
+}

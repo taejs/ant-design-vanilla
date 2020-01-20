@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../antd-switch/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-timeline/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-alert/dist/bundle.css"></link>
+  <link rel="stylesheet" href="../../antd-tag/dist/bundle.css"></link>
   <script src="../dist/bundle.js"></script>
 </head>
 <body>
@@ -201,7 +202,25 @@
 </div>
 
 </section>
-
+<section>
+  <div class="ant-tag ant-tag--checkable ant-tag--checked">
+      Tag1
+  </div>
+  <div class="ant-tag ant-tag--checkable">
+    Tag2
+  </div>
+  <div class="ant-tag ant-tag--checkable">
+    Tag3
+  </div>
+  <div class="ant-tag">
+    Tag1
+    <span class="ant-tag__remove" role="button" aria-label="remove"></span>
+  </div>
+  <div class="ant-tag">
+    Tag1
+    <span class="ant-tag__remove" role="button" aria-label="remove"></span>
+  </div>
+</section>
   <script>
     new antd.AntdWaveShadow(document.querySelector('.ant-button'));
     new antd.AntdWaveShadow(document.querySelector('.ant-button--primary'));
