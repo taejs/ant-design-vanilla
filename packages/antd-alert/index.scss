@@ -1,0 +1,37 @@
+@import '../antd-theme/function.scss';
+@import '../antd-theme/variables.scss';
+
+.ant-alert{
+    width:100%;
+    border:1px solid #91d5ff;
+    border-radius:2px;
+    padding :8px 16px;
+    margin:0;
+    font-size:14px;
+    position:relative;
+    box-sizing: border-box;
+    background:#e6f7ff;
+}
+
+.ant-alert__message{
+    font-size:16px;
+}
+
+.ant-alert__dismiss{
+    position: absolute;
+    top:8px;
+    right:16px;
+}
+
+.ant-alert__graphic{
+    width:24px;
+    height:24px;
+    margin-right:13px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.ant-alert__text{
+    display: inline-block;
+
+}
