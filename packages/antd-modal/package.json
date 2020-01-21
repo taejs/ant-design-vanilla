@@ -1,0 +1,8 @@
+{
+  "name": "antd-modal",
+  "version": "0.0.0",
+  "main": "index.ts",
+  "author": "tae",
+  "license": "MIT",
+  "private": false
+}
