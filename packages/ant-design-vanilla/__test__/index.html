@@ -238,7 +238,12 @@
 </section>
 
 
-<section style="overflow:hidden;height:500px;width:100%;">
+<section style="overflow:hidden;height:500px;width:100%;position:relative;">
+  <button id="open-modal" class="ant-button ant-button--large">
+    <span class="ant-button__label">Button</span>
+    <div class="ant-button__wave-shadow"></div>
+  </button>
+
   <div class="ant-modal">
     <div class="ant-modal__mask">
     <div class="ant-modal__container">
@@ -267,6 +272,18 @@
     new antd.AntdWaveShadow(document.querySelector('.ant-button--dashed'));
     new antd.AntdWaveShadow(document.querySelector('.ant-button--danger'));
     new antd.AntdWaveShadow(document.querySelector('.ant-button--large'));
+
+    (function() {
+      const modal = new antd.AntModal(document.querySelector('.ant-modal'));
+      const modalOpenButton = document.querySelector('#open-modal');
+      modal.close();
+      let isOpen = false;
+      modalOpenButton.addEventListener('click', () => {
+        isOpen = !isOpen;
+        if(isOpen) modal.open();
+        else modal.close();
+      });
+    })();
   </script>
 </body>
 </html>
