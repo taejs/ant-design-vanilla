@@ -1,0 +1,22 @@
+@import '../antd-theme/function.scss';
+
+ .ant-collapse{
+  font-size :14px;
+  color : rgba(0, 0, 0, 0.65);
+  background-color: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-bottom: 0;
+  border-radius: 2px;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+ }
+
+ .ant-collapse-item{
+   border-bottom:1px solid #d9d9d9;
+ }
+
+ .ant-collapse-content{
+  background: #fff;
+  border-top:1px solid #d9d9d9;
+ }

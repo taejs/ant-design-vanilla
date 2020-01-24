@@ -4,7 +4,7 @@
         <div class="ant-upload__list-item">
         abc.png
             <button class="ant-upload__list-item-download"></button>
-            <button class="ant-upload__list-item-remove"></button>
+            <button class="ant-upload__list-item-remove"><button>
         </div>
     </div>
 </div>
