@@ -1,5 +1,7 @@
-<div class="antd-select">
-    <div class="ant-select__label"></div>
-    <input type="text" class="ant-select__selected-text">
-    <div class="ant-select__dropdown-icon"></div>
+<div class="ant-select">
+  <div class="ant-select__selector">
+    <span class="ant-select__selected-text"></span>
+    <input type="text" class="ant-select__search" value="Lucy" disabled>
+    <span class="ant-select__dropdown-icon"></span>
+  </div>
 </div>
