@@ -1,0 +1,10 @@
+@import './_mixin.scss';
+@import '../antd-theme/function.scss';
+
+
+.ant-icon{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+    user-select: none;
+}
