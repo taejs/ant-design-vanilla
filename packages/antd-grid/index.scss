@@ -1,0 +1,25 @@
+@import '../antd-theme/function.scss';
+
+.ant-grid {
+    max-width: 100%;
+    margin: 0 auto;
+}
+.ant-grid__row{
+    width:100%;
+}
+
+.ant-grid__row:after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.ant-grid__col {
+    float:left;
+}
+
+$grid__cols : 24;
+@for $i from 1 through $grid__cols {
+    .ant-grid__col-#{$i} {
+        width: (100% / (24 / $i));
+    }
+}
