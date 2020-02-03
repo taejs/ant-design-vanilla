@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../../antd-tag/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-spin/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-modal/dist/bundle.css"></link>
+  <link rel="stylesheet" href="../../antd-progress/dist/bundle.css"></link>
   <script src="../dist/bundle.js"></script>
 </head>
 <body>
@@ -239,6 +240,7 @@
 
 
 <section style="overflow:hidden;height:500px;width:100%;position:relative;">
+
   <button id="open-modal" class="ant-button ant-button--large">
     <span class="ant-button__label">Button</span>
     <div class="ant-button__wave-shadow"></div>
@@ -265,6 +267,21 @@
       </footer>
     </div>
   </div>
+</section>
+<section>
+  <div class="ant-progress ant-progress--label">
+    <div class="ant-progress__outer">
+        <div class="ant-progress__inner"></div>
+    </div>
+    <div class="ant-progress__text">10%</div>
+</div>
+
+<div class="ant-progress">
+    <div class="ant-progress__outer">
+        <div class="ant-progress__inner"></div>
+    </div>
+</div>
+
 </section>
   <script>
     new antd.AntdWaveShadow(document.querySelector('.ant-button'));

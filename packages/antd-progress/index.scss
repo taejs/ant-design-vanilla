@@ -1,2 +1,40 @@
 @import '../antd-theme/function.scss';
 @import '../antd-theme/variables.scss';
+
+.ant-progress {
+  line-height: 0px;
+  padding:0;
+  margin:0;
+  width:100%;
+  height:8px;
+
+  * {
+    vertical-align: middle;
+  }
+
+  &__outer {
+    display: inline-block;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+  }
+
+  &__inner{
+    background:$ant-theme-primary;
+    width:33%;
+    border-radius: 10px;
+    height:100%;
+  }
+
+  &--label & { // qualify a selector by putting the & on the right (https://css-tricks.com/the-sass-ampersand/)
+    &__outer {
+      width:calc(100% - 50px); 
+    }
+    &__text {
+      display: inline-block;
+      margin-left:8px;
+    }
+  }
+}
