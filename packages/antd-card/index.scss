@@ -1,9 +1,8 @@
-@import './_mixin.scss';
 @import '../antd-theme/function.scss';
 
 .ant-card {
     border-radius: 2px;
-    width:300px;
+    width:100%;
 }
 .ant-card--outlined {
     border : 1px solid get-color('grey', 4);
