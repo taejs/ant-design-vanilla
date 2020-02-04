@@ -3,304 +3,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Button</title>
-  <link rel="stylesheet" href="../../antd-button/dist/bundle.css"></link>
+  <link rel="shortcut icon" href="./logo.png"/>
+  <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel="stylesheet" href="../../antd-grid/dist/bundle.css"></link>
   <link rel="stylesheet" href="../../antd-card/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-menu/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-checkbox/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-radio/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-input/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-pagination/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-switch/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-timeline/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-alert/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-tag/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-spin/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-modal/dist/bundle.css"></link>
-  <link rel="stylesheet" href="../../antd-progress/dist/bundle.css"></link>
-  <script src="../dist/bundle.js"></script>
+  <title>ant-design-vanlia</title>
+  <style>
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    }
+
+    header { 
+      text-align: center;
+      margin:100px 0px;
+    }
+    header * {
+      vertical-align: middle;
+    }
+
+    header img + h1{
+      margin-left:30px;
+    }
+
+    header h1 {
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: -1px;
+      font-size:100px;
+    }
+
+    header p {
+      margin-top:50px;
+      font-weight: 300;
+    }
+
+    .content{
+      margin:0 auto;
+      width:800px;
+    }
+
+  </style>
 </head>
 <body>
-  <aside class="ant-menu" role="menu">
-    <ul class="ant-menu__items">
-        <li class="ant-menu__item ant-menu__item--selected" role="menuitem">
-          <div class="ant-menu__item-title">Option1</div>
-          <ul class="ant-menu__sub-items" role="menu">
-              <li class="ant-menu__sub-item ant-menu__sub-item--selected">
-                <div class="ant-menu__sub-item-title">Option2</div>
-              </li>
-          </ul>
-        </li>
-        <li class="ant-menu__item ant-menu__item--linked ant-menu__item--selected" role="menuitem">
-          <div class="ant-menu__item-title">Option2</div>
-            <ul class="ant-menu__sub-items" role="menu">
-                <li class="ant-menu__sub-item" role="menuitem">
-                  <div class="ant-menu__sub-item-title">Option1</div>
-                </li>
-                <li class="ant-menu__sub-item ant-menu__sub-item--selected" role="menuitem">
-                  <div class="ant-menu__sub-item-title">Option2</div>
-                </li>
-                <li class="ant-menu__sub-item" role="menuitem">
-                  <div class="ant-menu__sub-item-title">Option3</div>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</aside>
-
-  <section>
-    <h1>Button</h1>
-    <p>To trigger an operation.</p>
-    <h2>When To Use</h2>
-    <p>A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic. </p>
-    <h2>Examples</h2>
-    <div>
-      <a>Type</a>
-      <p>There are primary button, default button, dashed button, danger button and link button in antd.</p>
-      <button class="ant-button">
-        <span class="ant-button__label">Button</span>
-        <div class="ant-button__wave-shadow"></div>
-      </button>
-      <button class="ant-button ant-button--primary">
-        <span class="ant-button__label">Button</span>
-        <div class="ant-button__wave-shadow"></div>
-      </button>
-      <button class="ant-button ant-button--dashed">
-        <span class="ant-button__label">Button</span>
-        <div class="ant-button__wave-shadow"></div>
-      </button>
-      <button class="ant-button ant-button--danger">
-        <span class="ant-button__label">Button</span>
-        <div class="ant-button__wave-shadow"></div>
-      </button>
-      <button class="ant-button ant-button--link">
-        <span class="ant-button__label">Button</span>
-        <div class="ant-button__wave-shadow"></div>
-      </button>
-      <button class="ant-button ant-button--large">
-        <span class="ant-button__label">Button</span>
-        <div class="ant-button__wave-shadow"></div>
-      </button>
+  <section class="ant-grid">
+    <header class="ant-grid__row">
+      <img src="logo.png" width="100">
+      <h1>Ant Design Vanilla</h1>
+      <p>Ant design with HTML/CSS/JavaScript</p>
+    </header>
+    <section class="content">
+    <div clsss="ant-grid__row">
+      <div class="ant-grid__col ant-grid__col-8">
+        <div class="ant-card ant-card--outlined ant-card--small">
+          <div class="ant-card__body">
+              Button
+          </div>
+        </div>
+      </div>
+      <div class="ant-grid__col ant-grid__col-8">
+        <div class="ant-card ant-card--outlined ant-card--small">
+          <div class="ant-card__body">
+              Card
+          </div>
+        </div>
+      </div>
+      <div class="ant-grid__col ant-grid__col-8">
+        <div class="ant-card ant-card--outlined ant-card--small">
+          <div class="ant-card__body">
+              Progress
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="ant-card ant-card--outlined ant-card--small">
-      <div class="ant-card__head">
-          <h3>Basic Card</h3>
-          <div class="ant-card__extra">
-              <a href="#">Move</a href="#">
+    <div clsss="ant-grid__row">
+      <div class="ant-grid__col ant-grid__col-8">
+        <div class="ant-card ant-card--outlined ant-card--small">
+          <div class="ant-card__body">
+              Checkbox
           </div>
+        </div>
       </div>
-      <div class="ant-card__body">
-          card content
+      <div class="ant-grid__col ant-grid__col-8">
+        <div class="ant-card ant-card--outlined ant-card--small">
+          <div class="ant-card__body">
+              Radio
+          </div>
+        </div>
       </div>
-      <div class="ant-card__actions">
-          <div class="ant-card__action">
+      <div class="ant-grid__col ant-grid__col-8">
+        <div class="ant-card ant-card--outlined ant-card--small">
+          <div class="ant-card__body">
+              Notification
           </div>
-          <div class="ant-card__action">
-          </div>
-          <div class="ant-card__action">
-          </div>
+        </div>
       </div>
-  </div>
+    </div>
+    </section>
   </section>
-  <section>
-    <label class="ant-checkbox">
-      <div class="ant-checkbox__mark-wrapper">
-          <input type="checkbox" class="ant-checkbox__native-control" id="id">
-          <div class="ant-checkbox__mark"></div>
-      </div>
-      <span class="ant-checkbox__label">Option 1</div>
-  </label>
-  <label class="ant-radio">
-    <div class="ant-raido__mark-wrapper">
-        <input type="radio" class="ant-radio__native-control" name="a" id="id">
-        <div class="ant-radio__mark"> </div>
-    </div>
-    <span class="ant-radio__label">Option 1</div>
-</label>
-<label class="ant-radio">
-    <div class="ant-raido__mark-wrapper">
-        <input type="radio" class="ant-radio__native-control"  name="a" id="id">
-        <div class="ant-radio__mark"> </div>
-    </div>
-    <div class="ant-radio__label">Option 2</div>
-</label>
-
-<label class="ant-radio ant-radio--disabled">
-    <div class="ant-raido__mark-wrapper">
-        <input type="radio" class="ant-radio__native-control" id="id">
-        <div class="ant-radio__mark"> </div>
-    </div>
-    <span class="ant-radio__label">Option 1</span>
-</label>
-
-<label class="ant-input">
-  <input class="ant-input__native-control">
-</label>
-
-<div>
-  <ul class="ant-pagination">
-    <li class="ant-pagination__item  ant-pagenation__item--prev">
-        <a class="ant-pagination__link"></a>
-    </li>
-    <li class="ant-pagination__item">
-        <a class="ant-pagination__link">1</a>
-    </li>
-    <li class="ant-pagination__item ant-pagination__item--selected">
-      <a class="ant-pagination__link">2</a>
-    </li>
-    <li class="ant-pagination__item">
-      <a class="ant-pagination__link">3</a>
-    </li>
-    <li class="ant-pagination__item">
-      <a class="ant-pagination__link">4</a>
-    </li>
-    <li class="ant-pagination__item">
-      <a class="ant-pagination__link">5</a>
-    </li>
-    <li class="ant-pagination__item  ant-pagenation__item--next">
-        <a class="ant-pagenation__link"></a>
-    </li>
-</ul>
-<label class="ant-switch ant-switch--checked">
-    <div class="ant-switch__label ant-switch__label--positive">o</div>
-    <div class="ant-switch__label ant-switch__label--negative">x</div>
-    <div class="ant-switch__mark-wrapper">
-        <input type="checkbox" class="ant-switch__native-control">
-        <div class="ant-switch__mark"></div>
-    </div>
-</label>
-<ul class="ant-timeline">
-  <li class="ant-timeline__item">
-    <div class="ant-timeline__mark"></div>
-    <div class="ant-timeline__content">Solve initial network</div>
-  </li>
-  <li class="ant-timeline__item">
-    <div class="ant-timeline__mark"></div>
-    <div class="ant-timeline__content">Solve initial network</div>
-  </li>
-  <li class="ant-timeline__item">
-    <div class="ant-timeline__mark"></div>
-    <div class="ant-timeline__content">Solve initial network</div>
-  </li>
-  <li class="ant-timeline__item">
-    <div class="ant-timeline__mark"></div>
-    <div class="ant-timeline__content">Solve initial network</div>
-  </li>
-</ul>
-
-</section>
-<section>
-  <div class="ant-alert ant-alert--success">
-    <div class="ant-alert__text">
-        <div class="ant-alert__message">Success Tips</div>
-        <div class="ant-alert__description">Detailed description and advice about successful copywriting.</div>
-    </div>
-    <span class="ant-alert__dismiss" role="button"></span>
-</div>
-
-<div class="ant-alert ant-alert--success">
-    <span class="ant-alert__graphic" aria-hidden="true">Success</span>
-    <div class="ant-alert__text">
-        <div class="ant-alert__message">Success Tips</div>
-        <div class="ant-alert__description">Detailed description and advice about successful copywriting.</div>
-    </div>
-    <span class="ant-alert__dismiss" role="button"></span>
-</div>
-
-</section>
-<section>
-  <div class="ant-tag ant-tag--checkable ant-tag--checked">
-      Tag1
-  </div>
-  <div class="ant-tag ant-tag--checkable">
-    Tag2
-  </div>
-  <div class="ant-tag ant-tag--checkable">
-    Tag3
-  </div>
-  <div class="ant-tag">
-    Tag1
-    <span class="ant-tag__remove" role="button" aria-label="remove"></span>
-  </div>
-  <div class="ant-tag">
-    Tag1
-    <span class="ant-tag__remove" role="button" aria-label="remove"></span>
-  </div>
-</section>
-
-<section>
-  <div class="ant-spin">
-      <div aria-hidden></div>
-      <div aria-hidden></div>
-      <div aria-hidden></div>
-      <div aria-hidden></div>
-  </div>
-</section>
-
-
-<section style="overflow:hidden;height:500px;width:100%;position:relative;">
-
-  <button id="open-modal" class="ant-button ant-button--large">
-    <span class="ant-button__label">Button</span>
-    <div class="ant-button__wave-shadow"></div>
-  </button>
-
-  <div class="ant-modal">
-    <div class="ant-modal__mask">
-    <div class="ant-modal__container">
-      <div class="ant-modal__title">Modal</div>
-      <div class="ant-modal__content">
-        abcd<br>
-        abcde<br>
-        bacd
-      </div>
-      <footer class="ant-modal__actions">
-        <button class="ant-button ant-modal__button">
-          <span class="ant-button__label">Button</span>
-          <div class="ant-button__wave-shadow"></div>
-        </button>
-        <button class="ant-button ant-modal__button ant-modal__button--primary">
-          <span class="ant-button__label">Button</span>
-          <div class="ant-button__wave-shadow"></div>
-        </button>
-      </footer>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="ant-progress ant-progress--label">
-    <div class="ant-progress__outer">
-        <div class="ant-progress__inner"></div>
-    </div>
-    <div class="ant-progress__text">10%</div>
-</div>
-
-<div class="ant-progress">
-    <div class="ant-progress__outer">
-        <div class="ant-progress__inner"></div>
-    </div>
-</div>
-
-</section>
-  <script>
-    new antd.AntdWaveShadow(document.querySelector('.ant-button'));
-    new antd.AntdWaveShadow(document.querySelector('.ant-button--primary'));
-    new antd.AntdWaveShadow(document.querySelector('.ant-button--dashed'));
-    new antd.AntdWaveShadow(document.querySelector('.ant-button--danger'));
-    new antd.AntdWaveShadow(document.querySelector('.ant-button--large'));
-
-    (function() {
-      const modal = new antd.AntModal(document.querySelector('.ant-modal'));
-      const modalOpenButton = document.querySelector('#open-modal');
-      modal.close();
-      let isOpen = false;
-      modalOpenButton.addEventListener('click', () => {
-        isOpen = !isOpen;
-        if(isOpen) modal.open();
-        else modal.close();
-      });
-    })();
-  </script>
 </body>
-</html>
