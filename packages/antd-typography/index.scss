@@ -1,0 +1,47 @@
+@import '../antd-theme/function.scss';
+.ant-typography{
+  color: rgba(0, 0, 0, 0.65);
+}
+.ant-typography--headline1 {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 1.23;
+}
+.ant-typography--headline2 {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 30px;
+}
+.ant-typography--headline3 {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 24px;
+}
+.ant-typography--headline4 {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.ant-typography--secondary {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.ant-typography--warning {
+  color: #faad14;
+}
+
+.ant-typography--danger {
+  color: #ff4d4f;
+}
+
+.ant-typography--disabled {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+  user-select: none;
+}
+
+.ant-typography--marked {
+  background-color: #ffe58f;
+}
