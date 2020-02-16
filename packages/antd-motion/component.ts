@@ -48,7 +48,10 @@ export class AntdWaveShadow  {
       }
 
     activate(){
-        if(this.activationTimer) clearTimeout(this.activationTimer);
+        if(this.activationTimer) {
+            this.activationTimer = null;
+            clearTimeout(this.activationTimer);
+        }
 
         this.adapter.removeClass(cssClasses.WAVE_ACTIVATION);
         requestAnimationFrame(()=>{
