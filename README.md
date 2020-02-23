@@ -15,7 +15,7 @@ It's adaptable to rendering third-party referring to [material-components-web](h
 Unfortunately for now, all packages is WIP so there's no way to import Ant Design Vanilla. 
 Working on deploying NPM and CDN for each package using Lerna.
 
-It's only testable through `test.html` located at `packages/ant-design-vanilla`
+It's only testable through `test.html` located at `packages/ant-design-vanilla/__test__`
 
 
 ## LICENSE
