@@ -1,4 +1,6 @@
 # Ant Design Vanilla
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftaejs%2Fant-design-vanilla.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftaejs%2Fant-design-vanilla?ref=badge_shield)
+
 Pure HTML/CSS/JavaScript Implementation, originating from [Ant Design](https://github.com/ant-design/ant-design).
 
 Welcome to create an issue if there's a problem or suggestion
@@ -20,3 +22,6 @@ It's only testable through `test.html` located at `packages/ant-design-vanilla/_
 
 ## LICENSE
 MIT
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftaejs%2Fant-design-vanilla.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftaejs%2Fant-design-vanilla?ref=badge_large)
